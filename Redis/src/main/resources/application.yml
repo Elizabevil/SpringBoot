@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB
+  datasource:
+    # JDBC配置：
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.20.6:3306/Spring
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    username: root
+    password: 123456
+############################################################
+# REDIS 配置
+############################################################
+
+  redis:
+    database: 0
+    host: 192.168.20.6
+    password: 123456
