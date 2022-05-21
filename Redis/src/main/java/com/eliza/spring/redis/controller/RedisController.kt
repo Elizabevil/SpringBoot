@@ -31,6 +31,11 @@ class RedisController {
     fun getUser() {
         println(redisTemplate!!.opsForValue()["name"])
     }
+    @GetMapping("/set2")
+    fun setUse2r() {
+        redisTemplate?.let { RedisUtils(it).set("name", "set2") }
+    }
+
 
 
     @GetMapping("/set1")
@@ -43,15 +48,5 @@ class RedisController {
         println(RedisOperator(stringRedisTemplate).get("name"))
     }
 
-    @GetMapping("/set2")
-    fun setUse2r() {
-        redisTemplate?.let { RedisUtils(it).set("name", "set2") }
-    }
 
-    @GetMapping("/get2")
-    fun getUse2r() {
-        println(redisTemplate?.let { RedisUtils(it).get("name") })
-
-
-    }
 }
